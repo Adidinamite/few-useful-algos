@@ -1,0 +1,22 @@
+Cerinta(OJI 2003)
+Destula informatica pe ziua de azi, haideti sa facem putin matematica. Imaginati-va ca se introduc de la tastatura 4 numere naturale x, y, z si w. Variabilele x si y seminifca numaratorul, respectiv numitorul unei fractii F1. De asemenea cu z si w am notat numaratorul si numitorul altrei fractii F2.
+
+Calculati suma si produsul fractiilor F1 si F2, aducandu-le la forma ireductibila.
+
+Date de intrare
+Se citesc de la tastatura cele 4 numere  x, y, z si w descrise mai sus.
+
+ 
+
+Date de iesire
+Se vor afisa pe ecran urmatoarele variabilele a, b, c, si d.
+
+ 
+
+Restrictii si precizari
+0 < x, y, z si w < 1,000
+ 
+
+Exemplu
+Date de intrare	Date de iesire
+60 40 36 80	39 20 27 40

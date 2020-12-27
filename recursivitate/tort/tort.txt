@@ -1,0 +1,23 @@
+Cerinta(OJI 2003)
+Un tort dreptunghiular de dimensiuni M x N trebuie împărţit în porţii pătrate de aceeaşi mărime. Găsiţi numărul minim de porţii care se pot obţine şi dimensiunea L a acestora. Atât dimensiunile dreptunghiului cât şi ale pătratelor în care se împarte sunt numere întregi.
+
+ 
+
+Date de intrare
+Se citesc de la tastatura numere M si N.
+
+ 
+
+Date de iesire
+Se vor afisa pe ecran, separate prin cate un spatiu dimensiunea L a portiilor si  numarul minim al acestora.
+
+ 
+
+Restrictii si precizari
+0 <  M, N < 10,000
+ 
+
+Exemplu
+Date de intrare	Date de iesire
+20 24	30 4
+105 65	273 5

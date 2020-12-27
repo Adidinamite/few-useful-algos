@@ -4,6 +4,8 @@ bool ePrim(int x)
         return false;
      if(x == 2)
       return true;
+    if(x%2==0)
+           return false;
     for(int j = 3; j<=sqrt(x); ++j)
         if(x%j==0)
             return false;

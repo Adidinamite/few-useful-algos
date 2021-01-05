@@ -4,7 +4,7 @@ using namespace std;
 int cautare_binara(int st, int dr, int x)
 {
   int mij = (st+dr)/2;
-  if(mij * mij  == x)
+  if(mij * mij  == x || st > dr)
     return mij;
    else
    {

@@ -1,0 +1,4 @@
+Given N =10 ^ 7 numbers, between 0 and 10^9
+How many different values are there?
+
+///NOT THE RECOMMENDED ONE WOULD BE TO USE A SET WE USE TO STOCK ALL THE NUMBERS, AND THEN PRINT ITS SIZE

@@ -62,21 +62,39 @@ void verticalFlip(int startRow, int startCol, int endRow, int endCol) /// (1, 1,
         }
     }
 }
-void rotateClockwise(int startRow, int startCol, int endRow, int endCol)
+void cycle(int &a, int &b, int &c, int &d)
 {
-    if
+    int aux = a;
+    a = b;
+    b = c;
+    c = d;
+    d = aux;
+}
+void rotateClockwise()
+{
+    for(int i =1; i<=n/2; i++)
     {
-        
+        for(int j=1; j<=(n+1)/2; j++)
+        {
+            cycle(matrix[i][j], matrix[n-j+1][i], matrix[n-i+1][n-j+1], matrix[j][n-i+1]);
+        }
     }
-    else
+}
+void rotateantiClockwise()
+{
+    for(int i =1; i<=n/2; i++)
     {
-        
+        for(int j=1; j<=(n+1)/2; j++)
+        {
+            cycle(matrix[i][j], matrix[j][n-i+1], matrix[n-i+1][n-j+1], matrix[n-j+1][i]);
+        }
     }
 }
 int main()
 {
     citire();
-    verticalFlip(1, 1, n, n);
+    //verticalFlip(1, 1, n, n);
+    rotateantiClockwise();
     afisare();
     return 0;
 }

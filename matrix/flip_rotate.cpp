@@ -90,11 +90,25 @@ void rotateantiClockwise()
         }
     }
 }
+bool areEqual(int a[DIMENSIUNE][DIMENSIUNE], int b[DIMENSIUNE][DIMENSIUNE])
+{
+    for(int i=1; i<=n; i++)
+    {
+        for(int j=1; j<=n; j++)
+        {
+            if(a[i][j] != b[i][j])
+                return false;
+        }
+    }
+    return true;
+}
 int main()
 {
     citire();
     //verticalFlip(1, 1, n, n);
-    rotateantiClockwise();
+    //horizontalFlip(1, 1, n, n);
+    //rotateClockwise();
+    //rotateantiClockwise();
     afisare();
     return 0;
 }

@@ -1,64 +1,85 @@
 #include <iostream>
-
+#include <fstream>
 using namespace std;
-int labirint[1002][1002];
-int n , m, i , j;
-int starti, startj, finishi, finishj;
-int deplasareI[4] = {-1, 0, +1, 0};
-int deplasareJ[4] = {0, +1, 0, -1};
-void citire()
+ifstream fin("date.in");
+ofstream fout ("date.out");
+int r,c;
+int mat[100][100], visited[100][100];
+int rowMoves[4]={-1,  0, +1,  0};
+int colMoves[4]={ 0, +1,  0, -1};
+int pas = 0;
+void afiseaza(int mat[100][100])
 {
-    cin >> n >> m ;
-    cin >> starti >> startj ;
-    cin >> finishi >> finishj;
-    for(i = 0; i<n; ++i)
+    for(int  i=0;i<r;  i++)
     {
-        for(j=0;j <m; ++j)
+        for( int j=0; j<c; j++)
         {
-            cin >> labirint[i][j];
+            cout<< mat[i][j] << " ";
         }
+        cout<< endl;
     }
 }
-bool verificare(int x, int y)
+bool verificare(int linie, int column)
 {
-    if(x > n || x  < 1)
+    if(linie > r || column > c)
         return false;
-    if(y > m || y < 1)
+    else if(linie<0 || column < 0)
         return false;
-    if(labirint[x][y] == 1 ||( x == finishi && y == finishj))
-        return true;
-    if(labirint[x][y] == 0 || labirint[x][y])
+    else if(mat[linie][column] == 0)
+        return false;
+    else if(visited[linie][column] == 1)
         return false;
     return true;
 }
-void out(){
-for(i=0; i<n; ++i){
-    {for(j=0; j<m ;++j)
-        cout<< labirint[i][j]<<" ";
+int bkt(int linie, int coloana)
+{
+    cout<<"linie: "<< linie <<" coloana:"<<coloana << endl;
+    if(linie == r-1 && coloana == c-1){
+        cout<<"Labirintul a fost parcur in " <<pas<<" pasi"<<endl;
     }
-    cout<< endl;
-}
-}
-void bkt(int x , int y, int pas){
-    if(x == finishi && y== finishj)
-        out();
     else{
-        for(i = 0; i<=3; i++)
+        for(int i= 0;i<=3; i++)
         {
-            int posI = x + deplasareI[i];
-            int posJ = y + deplasareJ[i];
-            if(verificare(posI, posJ))
-                {
-                labirint[posI][posJ] = pas;
-                bkt(posI, posJ, pas + 1);
-                labirint[posI][posJ] = 0;
-        }}
+
+            int linieNoua = linie + rowMoves[i];
+            int coloanaNoua = coloana + colMoves[i];
+            cout<< "vecini:";
+            cout<<"linie: "<< linieNoua <<" coloana:"<<coloanaNoua << endl;
+            if(verificare(linieNoua, coloanaNoua))
+            {
+                pas ++;
+                visited[linieNoua][coloanaNoua] = 1;
+                afiseaza(visited);
+                bkt(linieNoua, coloanaNoua);
+                visited[linieNoua][coloanaNoua] = 0;
+                pas--;
+            }
+        }
     }
 }
+
 int main()
 {
-    citire();
-    //out();
-    bkt(starti, startj, 2);
-    return 0;
+
+    fin >> r >> c;
+    for(int i=0; i<r; i++)
+    {
+        for(int j=0; j<c; j++)
+        {
+            fin >> mat[i][j];
+            visited[r][c] = 0;
+        }
+    }
+    afiseaza(mat);
+    visited[0][0] = 1;
+    bkt(0, 0);
 }
+/*
+se dau r(linii) si c
+se citeste matricea ( 0 si 1)
+se porneste de la  0-0
+ajung la j coloana
+1 - psatiu gol
+0- perete
+
+*/

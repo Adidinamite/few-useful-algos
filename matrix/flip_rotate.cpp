@@ -144,6 +144,6 @@ int main()
     rotateClockwise(matrix);
     rotateClockwise(matrix);
     cout << "Flip horizontal+vertical same as 2 rotates. Expected true: " << areEqual(initialMatrix, matrix) << endl;
-    
+
     return 0;
 }

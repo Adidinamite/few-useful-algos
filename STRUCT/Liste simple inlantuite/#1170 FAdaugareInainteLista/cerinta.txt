@@ -1,0 +1,26 @@
+https://www.pbinfo.ro/probleme/1170/fadaugareinaintelista
+
+Se consideră o listă liniară simplu înlănțuită, alocată dinamic, în care elementele sunt de tipul declarat mai jos:
+
+struct nod{
+    int info;
+    nod * urm;
+};
+
+în care câmpul info memorează un număr întreg, iar câmpul urm memorează adresa următorului element al listei.
+Cerinţa
+
+Să se scrie o funcție C++ cu următorul prototip:
+
+void adaugareInainte(nod * & p , int x);
+
+care adaugă valoarea x la începutul listei pentru care primul element are adresa memorată în pointerul p.
+Restricţii şi precizări
+
+    numele funcției va fi adaugareInainte
+    dacă lista nu conține niciun element, pointerul p va avea valoarea NULL
+    în toate cazurile, la ieșirea din apel p va memora adresa primului element al listei
+
+Important
+
+Soluţia propusă va conţine definiţia funcţiei cerute. Prezenţa în soluţie a altor instrucţiuni poate duce erori de compilare sau de execuţie care vor avea ca efect depunctarea soluţiei.

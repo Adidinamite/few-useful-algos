@@ -1,0 +1,24 @@
+https://www.pbinfo.ro/probleme/1175/flistasuma
+
+Se consideră o listă liniară simplu înlănțuită, alocată dinamic, în care elementele sunt de tipul declarat mai jos:
+
+struct nod{
+    int info;
+    nod * urm;
+};
+
+în care câmpul info memorează un număr natural, iar câmpul urm memorează adresa următorului element al listei.
+Cerinţa
+
+Să se scrie o funcție C++ cu următorul prototip:
+
+int suma(nod * p);
+
+care determina și returnează suma elementelor impare situate între două elemente pare din lista pentru care primul element are adresa memorată în pointerul p.
+
+Exemplu
+
+Dacă lista conține valorile (4 7 8 9 1 2 5 8) funcția va returna valoarea 12, adică 7 + 5. Elementele 9 și 1 nu respectă condiția cerută.
+Important
+
+Soluţia propusă va conţine definiţia funcţiei cerute. Prezenţa în soluţie a altor instrucţiuni poate duce erori de compilare sau de execuţie care vor avea ca efect depunctarea soluţiei.

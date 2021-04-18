@@ -1,0 +1,28 @@
+Given an integer n
+Sort by length the n following word
+Input
+First line : an integer n
+n following lines : a string word
+Output
+Each line : each word sorted by length (ASC)
+Constraints
+0 < n <= 10
+No two words have the same length.
+Example
+Input
+
+5
+repulsive
+fill
+tramp
+cycles
+thicknesses
+
+Output
+
+fill
+tramp
+cycles
+repulsive
+thicknesses
+

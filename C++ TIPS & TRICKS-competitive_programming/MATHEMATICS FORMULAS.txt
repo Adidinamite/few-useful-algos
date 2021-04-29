@@ -1,3 +1,9 @@
+!!!logk(x) = a => k^a = x;
+   a shows how many times should x be divided by k to be 1
+   Another property of logarithms is that the number of digits of anintegerxin basebisblogb(x)+1c. 
+   For example, the representation of 123 in base 2 is 1111011 andblog2(123)+1c=7.
+   
+
 MATHEMATICS FORMULAS
 
 SUM FORMULAS

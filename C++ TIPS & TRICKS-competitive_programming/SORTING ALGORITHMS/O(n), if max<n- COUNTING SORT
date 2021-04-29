@@ -1,0 +1,50 @@
+///EXAMPLE OF COUNTING SORT IMPLEMENTATION
+/*
+    Time complexity O(n, in case the max num is <= than the number of elements in the array)
+*/
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+using namespace std;
+
+int const N = 10;
+int arr[10],cnt[10], out[10];
+int maxi = -1;
+void read()
+{
+    for(int i =0 ; i<N; i++)
+    {
+        cin >> arr[i];
+        cnt[arr[i]]++;
+        maxi = max(maxi, arr[i]);
+    }
+}
+void cummulative()
+{
+    for(int i = 1; i<=maxi; ++i)
+    {
+        cnt[i] += cnt[i-1];
+    }
+}
+void solve()
+{
+    for(int i = maxi; i>= 0; i--)
+    {
+        out[cnt[arr[i]] - 1] = arr[i];
+        cnt[arr[i]]--;
+    }
+}
+void output()
+{
+    for(int i = 0; i<=maxi; i++)
+        cout<< out[i] <<" ";
+}
+int main()
+{
+    read();
+    cummulative();
+    solve();
+    output();
+}
+
+//1 1 1 2 2 3 3 6 9 9

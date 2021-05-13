@@ -1,0 +1,20 @@
+Print the ASCII code of the characters of strings in reverse order without separation. Process the strings in reverse order, the last one first.
+Input
+Line 1: An integer N for the number of strings to handle.
+Next N lines: A string s (no empty line)
+Output
+N lines ASCII codes of input string.
+Constraints
+1 ≤ N ≤ 100
+Example
+Input
+
+2
+A
+BC
+
+Output
+
+6766
+65
+

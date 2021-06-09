@@ -28,19 +28,7 @@ void elim_zero(list <int> &lista)
         cautare++;
     }
 }
-int main()
-{
-    read();
-    list<int> num1, num2;
-    creare_lista(num1, first);
-    creare_lista(num2, second);
-    cout<<"Primul numar citit este: ";afiseaza_lista(num1);
-    cout<<"Al doilea numar citit este: ";afiseaza_lista(num2);
-
-    int size_num1 = first.size(), size_num2 = second.size();
-    int size_max = size_num1 + size_num2;
-    list<int> result(size_max, 0);
-
+void solve(list<int> num1, list<int> num2, list<int> &result){
     int cap = 0, carry = 0;
     for(list<int>::reverse_iterator i = num1.rbegin(); i != num1.rend(); ++i)
         {
@@ -58,8 +46,22 @@ int main()
         cap++;
         *cifra = carry;
         }
-    elim_zero(result);
+}
+int main()
+{
+    read();
+    list<int> num1, num2;
+    creare_lista(num1, first);
+    creare_lista(num2, second);
+    cout<<"Primul numar citit este: ";afiseaza_lista(num1);
+    cout<<"Al doilea numar citit este: ";afiseaza_lista(num2);
 
+    int size_num1 = first.size(), size_num2 = second.size();
+    int size_max = size_num1 + size_num2;
+    list<int> result(size_max, 0);
+
+    solve(num1,num2,result);
+    elim_zero(result);
     afiseaza_lista(result);
 
     return 0;

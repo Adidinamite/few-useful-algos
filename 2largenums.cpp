@@ -82,10 +82,10 @@ void produs(nod* num1, nod* num2, nod*& prod) {
 				num1 = num1->urm;
         while (num2->urm->urm != NULL )
 				num2 = num2->urm;
-        nod* copie_l2=num2;
+        nod* save=num2;
 		while (num1) {
 			int minn = 2;
-			num2=copie_l2;
+			num2=save;
             while(num2) {
                 int produs = sum(sum(head(cifreMaxim-minn-cif_urm , prod),(num1->info*num2->info)),rest);
                 rest = produs/10;produs%=10 ;

@@ -9,8 +9,8 @@ using namespace std;
         int speed; // speed
     void Move(int xa, int ya)
 {
-    player.x += xa * player.speed;
-    player.y += ya * player.speed;
+    x += xa * speed;
+    y += ya * speed;
 }
 };
 
@@ -24,6 +24,8 @@ int main()
 {
     Player player;
     player.x = 5;
+    player.speed = 2;
     player.Move(1, -1);
+    cout<< player.x;
     return 0;
 }

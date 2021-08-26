@@ -65,4 +65,4 @@ int main()
     afiseaza_lista(result);
 
     return 0;
-}
+}//
